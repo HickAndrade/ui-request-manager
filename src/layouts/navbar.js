@@ -1,6 +1,5 @@
-'use strict'
 import React, { useEffect, useState } from 'react';
-import '../assets/navbar.scss'
+import '../assets/styles/navbar.scss'
 
 const NavBar = ({ navOp }) =>{
 const[animatedProps, setAnimate] = useState({ navClass: 'nav', navTrigger: false });
