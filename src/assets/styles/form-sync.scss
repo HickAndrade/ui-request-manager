@@ -1,0 +1,379 @@
+$background: lightcoral;
+$easing: cubic-bezier(.25,1.7,.35,.8);
+$duration: 0.5s;
+$softorange: #F4A259;
+$tomatored: #F25C66;
+$mediumblu: #1E272D;
+$spinnerDuration: 1.4s;
+$spinnerOffset: 187;
+/*==================second section=====================*/
+/*=======================form=========================*/
+.req-input{
+    padding-top: 3%;
+    flex-wrap: wrap;
+    display: flex;
+    width: 100%; 
+}
+/*================== left wrapper ==================*/
+.left-wrapper{
+    left: 6%;
+    position: relative;
+    flex-direction: column;
+    width: 35%;
+    margin-top: 1.4%;
+    padding-left:15px;
+    height: 15rem;
+    padding-bottom: 14px;
+}
+
+.input-wrapper{
+    width: 95%;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 1px 0;
+    top: 20px;
+}
+.input-wrapper:hover{
+    border-bottom: 1px solid #8f8f8f;
+}
+
+
+
+.input-wrapper input{
+    font-size: 15px;
+    line-height: 1.2;
+    display: block;
+    width: 100%;
+    height: 26px;
+    border: none;
+    touch-action: manipulation;
+}
+
+.input-wrapper label{
+    position: absolute;
+    left: 0;
+    flex-flow: column-reverse;
+    top:3px;
+    cursor: text;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    touch-action: manipulation;
+    transition: all .3s;
+}
+/*================== span wrapper ==================*/
+
+.focus-input{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/*================== span animation wrapper ==================*/
+.form-input:focus{
+    outline: none;
+    background-color: rgb(253, 253, 253);
+}
+.form-input:focus + div label{
+    transform: translateY(-0.8rem);
+    font-size: 12px;
+}
+
+.form-input:placeholder-shown{
+    font-size: 10px;
+}
+
+.form-input:not(:placeholder-shown) + div label{
+    transform: translateY(-0.8rem);
+    font-size: 12px;
+}
+
+
+.form-input:focus + div .focus-input::before {
+    width: 100%;
+}
+
+/*======================= CPNJ =======================*/
+
+.select-bottom-bar{
+    height: 0px;
+    width: 100%;
+    background-color: rgb(75, 75, 75);
+    position: relative;
+    color: white;
+    border-radius: 0 0 5px 5px;
+    text-align: center;
+    padding-top: 4px;
+    overflow: hidden;
+    border: thin solid black;
+    transition: all 0.3s;
+}
+
+.show-bottom-bar{
+    height: 30px;
+}
+
+/*================== Botão nova Razão ==================*/
+.black-btn{
+    margin:auto;
+    width: 70%;
+    height: 30px;
+    position: relative;
+    display: table;
+    padding-top: 2.3%;
+    margin-top: 8%;
+    margin-bottom: 5%;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    transition: 0.2s;
+}
+.black-btn::before{
+    content: attr(data-content);
+}
+.black-btn:hover{
+    background-color: gray;
+}
+
+/*================== mid menu ========================*/
+.mid-wrapper{
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    width:50%;  
+    height: 15rem;
+    display: flex;
+    margin-top: 1%;
+    left: 19%;
+    text-align: left;
+}
+.cost{
+    position: relative;
+    height: auto;
+    width: 92%;
+    left: 3%;
+}
+.value-buttons{
+    height: auto;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.value-result{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 1.7rem;
+    width: 70%;
+    height: auto;
+    font-size: 1.4rem;
+}
+.value-result span{
+    text-align: center;
+    width: 93%; 
+}
+
+.showingValidation{
+    font-size: 16px;
+    color: green;
+    opacity: 0;
+    transform: translateY(30px);
+    visibility: hidden;
+    &::before{
+     content: attr(data-content);
+    }
+}
+
+
+
+@keyframes hideShowSpan {
+   5%{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+   }
+   90%{
+    opacity: 1;
+    transform: translateY(0px);
+   }
+   95%{
+    opacity: 0;
+   }
+   100%{
+    opacity: 0;
+    transform: translateY(-30px);
+   }
+}
+
+/*==============DROP MENU========================*/
+.right-wrapper{
+    border-top: 1px solid black;
+    height: auto;
+    position: relative;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    left: 15%;
+    top:4rem;
+}
+.right-wrapper h4{
+    position: relative;
+    text-align: left;
+    width: 100%;
+    padding-left: 1rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.4rem;
+}
+
+.f-drop{
+    position: relative;
+    display: flex;
+    flex-direction:row;
+    width: 100%; 
+    height: 30px;
+    z-index: 1;
+    transition: all 0.4s;
+  }
+  .drivers{
+    right: 2rem;
+  }
+  .driver-plate{
+    opacity: 0;
+    position: relative;
+    padding-left: 1rem;
+    text-align: left;
+    width: 35%;
+    transition: 0.1s all;
+}
+
+.km-input{
+    width: 23%;
+    position: relative;
+    margin-top:0.8rem;
+    transition:none;
+    opacity: 0;
+}
+
+.arrow-icon {
+    height: 2.3em;
+    width:3em;
+    margin-top: 1.4rem;
+    display:block;
+    padding: 0.5em;
+    right: 0;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .left-bar {
+    position: absolute;
+    background-color: transparent;
+    top: 0;
+    left:0;
+    width: 21px;
+    height: 5px;
+    display: block;
+    transform: rotate(35deg);
+    float: right;
+    border-radius: 2px;
+    &:after {
+      content:"";
+      background-color: rgb(0, 0, 0);
+      width: 21px;
+      height: 5px;
+      display: block;
+      float: right;
+      border-radius: 6px 10px 10px 6px;
+      transition: all $duration $easing;
+      z-index: -1;
+    }
+  }
+  
+  .right-bar {
+    position: absolute;
+    background-color: transparent;
+    top: 0px;
+    left:14px;
+    width: 21px;
+    height: 5px;
+    display: block;
+    transform: rotate(-35deg);
+    float: right;
+    border-radius: 2px;
+    &:after {
+      content:"";
+      background-color: rgb(0, 0, 0);
+      width: 21px;
+      height: 5px;
+      display: block;
+      float: right;
+      border-radius: 10px 6px 6px 10px;
+      transition: all $duration $easing;
+      z-index: -1;
+    }
+  }
+
+  .drop-open{
+    .left-bar::after{
+        transform-origin: center center;
+        transform: rotate(-70deg);
+    }
+    .right-bar::after{
+        transform-origin: center center;
+        transform: rotate(70deg);
+    }
+
+    .f-drop{
+        height: 110px;
+    }
+
+    .km-input{
+        animation: showEffect 0.8s forwards;
+    }
+
+    .driver-plate{
+        animation: showEffect 0.8s forwards;
+    }
+    .date-wrapper{
+        z-index: 0;
+    }
+}
+
+@keyframes showEffect {
+    0%{opacity: 1%;}
+    100%{opacity: 100%;}
+}
+ 
+.date-wrapper{
+    z-index: 1;
+    top: 1px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction:row;
+}
+
+.date{
+    width: 32%;
+    left: 20%;
+    height: 68px;
+    position: relative;
+    display: flex;
+    padding-right: 15px;
+    flex-direction: column;
+}
+
+.date-time{
+    width: 100%;
+    height: 27px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+    border-radius: 5px 5px 0 0;
+    border: thin solid black;
+}

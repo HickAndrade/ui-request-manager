@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import NavBar from './layouts/navbar'
 import './assets/styles/app.scss'
-import TableSync from "./components/tableSync";
+import TableSync from "./components/table-sync";
+import FormSync from "./components/form-sync";
 
 const App = () =>{
 const[filLabel, setFilLabel] = useState([]);
@@ -11,12 +12,12 @@ const[forExample, setExample] = useState(
     {
       id: {value: '1', label: 'ID'},
       reqNum: {value: 'ABC123', label: 'Requisição'},
-      reqDate: {value: '',label:'Data'},
-      reqHr: {value:'', label: 'Hora'},
-      veicleType:{value: '', label: 'Veiculo'},
-      veiclePlate: {value: '', label:'placa'},
-      drvName: {value: '', label:'Motorista'},
-      destiny:{value: '', label:'Destino'}
+      reqDate: {value:'26/09/2022',label:'Data'},
+      reqHr: {value:'09:30', label: 'Hora'},
+      veicleType:{value: 'FOX', label: 'Veiculo'},
+      veiclePlate: {value: 'ABC4444', label:'placa'},
+      drvName: {value: 'Henrique A.', label:'Motorista'},
+      destiny:{value: 'Taboão da Serra - SP', label:'Destino'}
     },
   );
 
@@ -57,7 +58,8 @@ return(
           { name: 'third li', link: '#' },
           { name: 'four li', link: '#' }
         ]} />
-        <TableSync allContent={forExample}/>
+        <TableSync allContent={forExample} />
+        <FormSync />
     </div>
 )
 }
